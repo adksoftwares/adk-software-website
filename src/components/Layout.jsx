@@ -11,9 +11,9 @@ const Layout = ({ children }) => {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#0B132B] font-sans text-white">
       <Navbar />
-      <main className="flex-grow pt-16">
+      <main className="flex-grow flex flex-col">
         {children}
       </main>
       <Footer />

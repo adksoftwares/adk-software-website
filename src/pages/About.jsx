@@ -1,67 +1,67 @@
 import { motion } from 'framer-motion';
 import { Target, Lightbulb, Shield, Zap } from 'lucide-react';
-import SectionHeading from '../components/SectionHeading';
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.6 }
+};
 
 const About = () => {
   return (
-    <div className="pt-10 pb-24">
-      {/* Header */}
-      <section className="bg-slate-900 text-white py-20 mb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="pt-32 pb-24 min-h-screen bg-transparent selection:bg-cyan-500/30">
+      
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        
+        <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+            className="text-5xl font-bold text-white mb-6"
           >
-            About ADK Software Solutions
+            About ADK
           </motion.h1>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-xl text-blue-200/60 leading-relaxed"
           >
             Engineering Smarter Digital Solutions for modern businesses.
           </motion.p>
         </div>
-      </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Story */}
         <section className="mb-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6 text-lg text-slate-600 dark:text-slate-400"
+              initial="initial" whileInView="whileInView" variants={fadeUp}
+              className="space-y-6 text-lg text-blue-100/70"
             >
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">Our Story</h2>
-              <p>
+              <h2 className="text-3xl font-bold text-white mb-6">Our Story</h2>
+              <p className="leading-relaxed">
                 ADK Software Solutions is a modern software development venture focused on building practical, high-performance digital tools for businesses and growing enterprises. We specialize in native Android applications, smart point-of-sale systems, custom web architectures, and business automation.
               </p>
-              <p>
+              <p className="leading-relaxed">
                 By combining analytical problem-solving with modern software technologies, ADK aims to create simple, efficient, and scalable digital solutions that help businesses streamline operations and grow.
               </p>
             </motion.div>
+            
             <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-slate-100 dark:bg-slate-800 rounded-3xl p-8 lg:p-12"
+              initial="initial" whileInView="whileInView" variants={fadeUp}
+              className="bg-[#151E3D] border border-blue-400/10 rounded-3xl p-10 lg:p-12 shadow-lg relative overflow-hidden"
             >
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Founder</h3>
-              <div className="flex items-start space-x-6">
-                <div className="w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center shrink-0">
-                   <span className="text-xl font-bold text-blue-600 dark:text-blue-400">SA</span>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl"></div>
+              <h3 className="text-2xl font-bold text-white mb-8">Founder</h3>
+              <div className="flex flex-col sm:flex-row items-start gap-6">
+                <div className="w-16 h-16 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+                   <span className="text-xl font-bold text-cyan-400">SA</span>
                 </div>
                 <div>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white">S. Arikarran</h4>
-                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">Founder & Software Developer</p>
-                  <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-4">B.Sc. in Biological Science (Reading)<br/>University of Peradeniya</p>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    "ADK Software Solutions was founded by S. Arikarran with a focus on combining analytical thinking, technology, and practical problem-solving to create useful digital solutions for businesses."
+                  <h4 className="text-xl font-bold text-white mb-1">S. Arikarran</h4>
+                  <p className="text-cyan-400 font-medium mb-3">Founder & Software Developer</p>
+                  <p className="text-xs font-semibold text-blue-300/50 uppercase tracking-wider mb-5 leading-relaxed">
+                    B.Sc. in Biological Science (Reading)<br/>University of Peradeniya
+                  </p>
+                  <p className="text-blue-100/60 text-sm leading-relaxed italic">
+                    "Founded with a focus on combining analytical thinking, technology, and practical problem-solving to create useful digital solutions for businesses."
                   </p>
                 </div>
               </div>
@@ -69,10 +69,13 @@ const About = () => {
           </div>
         </section>
 
-        {/* Mission, Vision, Values */}
         <section>
-          <SectionHeading title="Our Core Values" subtitle="What Drives Us" />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-white mb-4">Core Values</h2>
+            <p className="text-blue-200/60">The principles that drive our engineering.</p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: Target, title: 'Purpose-Driven', desc: 'Every line of code is written to solve a real business problem.' },
               { icon: Lightbulb, title: 'Analytical Thinking', desc: 'Approaching challenges logically to design the most efficient solutions.' },
@@ -83,17 +86,14 @@ const About = () => {
               return (
                 <motion.div 
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 text-center"
+                  initial="initial" whileInView="whileInView" variants={fadeUp}
+                  className="bg-[#1C2541] hover:bg-[#151E3D] transition-colors p-8 rounded-3xl shadow-sm border border-blue-400/10 text-center"
                 >
-                  <div className="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mx-auto mb-6 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
                     <Icon size={24} />
                   </div>
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{value.title}</h4>
-                  <p className="text-slate-600 dark:text-slate-400">{value.desc}</p>
+                  <h4 className="text-lg font-bold text-white mb-3">{value.title}</h4>
+                  <p className="text-blue-100/60 leading-relaxed text-sm">{value.desc}</p>
                 </motion.div>
               )
             })}

@@ -1,56 +1,58 @@
 import { motion } from 'framer-motion';
 import { services } from '../data/services';
-import SectionHeading from '../components/SectionHeading';
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+};
 
 const Services = () => {
   return (
-    <div className="pt-10 pb-24">
-      <section className="bg-slate-50 dark:bg-slate-900/50 py-20 mb-16 border-b border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6"
-          >
-            Our Services
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto"
-          >
-            Software solutions built around your business. We develop customized software designed to simplify workflows and accelerate growth.
-          </motion.p>
-        </div>
+    <div className="pt-32 pb-24 min-h-screen bg-transparent selection:bg-cyan-500/30">
+      <section className="px-6 mb-24 max-w-4xl mx-auto text-center">
+        <motion.h1 
+          initial="initial" animate="whileInView" variants={fadeUp}
+          className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+        >
+          Capabilities
+        </motion.h1>
+        <motion.p 
+          initial="initial" animate="whileInView" variants={fadeUp}
+          className="text-xl text-blue-200/60 font-medium leading-relaxed max-w-2xl mx-auto"
+        >
+          Software solutions built around your business. We develop customized architectures designed to simplify workflows and accelerate growth.
+        </motion.p>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-x-12 gap-y-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => {
-            const Icon = service.icon;
             return (
               <motion.div 
                 key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col sm:flex-row gap-6 bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-md transition-shadow"
+                initial="initial" whileInView="whileInView" variants={fadeUp}
+                className="bg-[#151E3D] hover:bg-[#1C2541] p-10 lg:p-14 rounded-3xl border border-blue-400/10 hover:border-cyan-500/30 transition-all duration-300 group flex flex-col shadow-lg"
               >
-                <div className="w-16 h-16 shrink-0 rounded-2xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 flex items-center justify-center">
-                  <Icon size={32} />
+                <div className="flex justify-between items-start mb-16">
+                   <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center font-bold text-cyan-400 shadow-[0_0_15px_rgba(6,182,212,0.1)]">
+                     0{index + 1}
+                   </div>
                 </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{service.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-400 text-lg mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <Link to="/contact" className="text-blue-600 dark:text-blue-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 inline-flex items-center">
-                    Request this service <span className="ml-2">→</span>
-                  </Link>
-                </div>
+                
+                <Link to="/contact" className="group/heading inline-flex items-center gap-3 mb-4">
+                  <h3 className="text-3xl font-bold text-white tracking-tight group-hover/heading:text-cyan-400 transition-colors">
+                    {service.title}
+                  </h3>
+                  <ArrowRight size={24} className="text-cyan-400 opacity-0 group-hover/heading:opacity-100 -rotate-45 transform transition-all duration-300 group-hover/heading:translate-x-1 group-hover/heading:-translate-y-1" />
+                </Link>
+                
+                <p className="text-blue-100/60 text-lg leading-relaxed flex-grow">
+                  {service.description}
+                </p>
               </motion.div>
             );
           })}

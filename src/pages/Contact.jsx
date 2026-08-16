@@ -1,87 +1,60 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import SectionHeading from '../components/SectionHeading';
+import { Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    service: '',
-    description: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Dummy submit
-    alert('Thank you for your enquiry. We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', company: '', service: '', description: '' });
-  };
-
   return (
-    <div className="pt-10 pb-24">
-      <section className="bg-slate-900 text-white py-20 mb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="pt-32 pb-24 min-h-screen bg-transparent selection:bg-cyan-500/30">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        
+        <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+            className="text-5xl font-bold text-white mb-6"
           >
-            Let's Build Something Useful
+            Start a Project
           </motion.h1>
           <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-slate-300 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-xl text-blue-200/60 leading-relaxed"
           >
-            Have a business problem that could be solved with software? Tell us about it.
+            We are currently accepting new projects. Contact us to discuss how we can build a digital solution for your business.
           </motion.p>
         </div>
-      </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-8">
           
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="lg:col-span-1 space-y-8"
+            initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-2 space-y-8"
           >
-            <div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Contact Information</h3>
+            <div className="bg-[#151E3D] border border-blue-400/10 p-8 rounded-3xl shadow-lg">
+              <h3 className="text-2xl font-bold text-white mb-8">Contact Info</h3>
               <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center shrink-0">
-                    <Mail size={24} />
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center shrink-0 mr-4">
+                    <Mail size={18} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Email</h4>
-                    <p className="text-slate-600 dark:text-slate-400 mt-1">hello@adksoftware.com</p>
+                    <p className="text-sm text-blue-200/50 mb-1">Email</p>
+                    <a href="mailto:contact@adksoftware.com" className="text-white hover:text-cyan-400 transition-colors font-medium">contact@adksoftware.com</a>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center shrink-0">
-                    <Phone size={24} />
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-green-500/10 text-green-400 flex items-center justify-center shrink-0 mr-4">
+                    <MessageCircle size={18} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Phone / WhatsApp</h4>
-                    <p className="text-slate-600 dark:text-slate-400 mt-1">+94 (XX) XXX XXXX</p>
+                    <p className="text-sm text-blue-200/50 mb-1">WhatsApp</p>
+                    <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-400 transition-colors font-medium">+94 72 344 0137</a>
                   </div>
                 </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-xl flex items-center justify-center shrink-0">
-                    <MapPin size={24} />
+                <div className="flex items-start">
+                  <div className="w-10 h-10 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 mr-4">
+                    <MapPin size={18} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Location</h4>
-                    <p className="text-slate-600 dark:text-slate-400 mt-1">Kandy, Sri Lanka</p>
+                    <p className="text-sm text-blue-200/50 mb-1">Location</p>
+                    <p className="text-white font-medium">Kandy, Sri Lanka</p>
                   </div>
                 </div>
               </div>
@@ -89,52 +62,33 @@ const Contact = () => {
           </motion.div>
 
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="lg:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-sm border border-slate-200 dark:border-slate-700"
+            initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
+            className="lg:col-span-3 bg-[#1C2541] border border-blue-400/10 rounded-3xl p-8 lg:p-12 shadow-lg"
           >
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Send an Enquiry</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Name *</label>
-                  <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow" placeholder="Your Name" />
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-blue-100/70">First Name</label>
+                  <input type="text" className="w-full bg-[#0B132B] border border-blue-400/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="John" />
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email *</label>
-                  <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow" placeholder="your@email.com" />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Phone / WhatsApp</label>
-                  <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow" placeholder="+94 XX XXX XXXX" />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Company / Business Name</label>
-                  <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow" placeholder="Company Name" />
+                <div className="space-y-2">
+                  <label className="text-sm font-medium text-blue-100/70">Last Name</label>
+                  <input type="text" className="w-full bg-[#0B132B] border border-blue-400/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Doe" />
                 </div>
               </div>
               
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Service Required</label>
-                <select id="service" name="service" value={formData.service} onChange={handleChange} className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow appearance-none">
-                  <option value="" disabled>Select a service</option>
-                  <option value="Smart POS">Smart POS</option>
-                  <option value="Android Application">Android Application</option>
-                  <option value="Web Application">Web Application</option>
-                  <option value="Business Automation">Business Automation</option>
-                  <option value="Custom Software">Custom Software</option>
-                  <option value="Other">Other</option>
-                </select>
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-blue-100/70">Email Address</label>
+                <input type="email" className="w-full bg-[#0B132B] border border-blue-400/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="john@company.com" />
               </div>
-
-              <div>
-                <label htmlFor="description" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Project Description *</label>
-                <textarea id="description" name="description" required value={formData.description} onChange={handleChange} rows="5" className="w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-shadow resize-y" placeholder="Tell us about your project requirements..."></textarea>
+              
+              <div className="space-y-2">
+                <label className="text-sm font-medium text-blue-100/70">Project Details</label>
+                <textarea rows="5" className="w-full bg-[#0B132B] border border-blue-400/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors resize-none" placeholder="Tell us about what you want to build..."></textarea>
               </div>
-
-              <button type="submit" className="w-full md:w-auto inline-flex justify-center items-center px-8 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors shadow-lg">
-                <Send size={18} className="mr-2" />
-                Send Enquiry
+              
+              <button type="submit" className="w-full py-4 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]">
+                Send Message
               </button>
             </form>
           </motion.div>
