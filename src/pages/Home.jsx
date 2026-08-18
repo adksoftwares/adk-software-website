@@ -123,34 +123,28 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             
             <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="order-2 lg:order-1 relative">
-              {/* Premium Dashboard Mockup */}
-              <div className="relative mx-auto w-full max-w-[360px] aspect-[9/18] bg-[#1C2541] rounded-[2.5rem] border border-blue-400/20 p-2 shadow-2xl">
-                <div className="w-full h-full bg-[#102135] rounded-[2rem] overflow-hidden flex flex-col relative border border-blue-400/10">
-                  <div className="h-14 bg-[#151E3D] flex items-center px-6 border-b border-blue-400/10">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400 mr-2 shadow-[0_0_8px_rgba(6,182,212,0.8)]"></div>
-                    <span className="font-semibold text-sm text-white">SmartPOS Lanka</span>
+              {/* Video Player Mockup */}
+              <div className="relative mx-auto w-full max-w-xl bg-[#1C2541] rounded-[1.5rem] md:rounded-[2.5rem] border border-blue-400/20 p-2 shadow-2xl z-10">
+                <div className="w-full bg-[#102135] rounded-[1rem] md:rounded-[2rem] overflow-hidden flex flex-col relative border border-blue-400/10">
+                  <div className="h-10 md:h-12 bg-[#151E3D] flex items-center px-6 border-b border-blue-400/10">
+                    <div className="flex gap-2">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+                    </div>
+                    <span className="font-semibold text-xs text-white/50 ml-4">SmartPOS Lanka Demo</span>
                   </div>
-                  <div className="p-5 flex-1 flex flex-col gap-4">
-                    <div className="bg-gradient-to-br from-cyan-600 to-blue-700 rounded-2xl p-5 shadow-lg relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
-                      <p className="text-cyan-100 text-sm mb-1">Today's Revenue</p>
-                      <p className="text-2xl font-bold text-white">Rs. 45,250</p>
-                    </div>
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="aspect-square bg-[#151E3D] rounded-2xl border border-blue-400/10 p-4 flex flex-col items-center justify-center gap-2">
-                        <Box size={24} className="text-cyan-400" />
-                        <div className="h-2 w-12 bg-blue-200/10 rounded-full"></div>
-                      </div>
-                      <div className="aspect-square bg-[#151E3D] rounded-2xl border border-blue-400/10 p-4 flex flex-col items-center justify-center gap-2">
-                        <ShieldCheck size={24} className="text-blue-400" />
-                        <div className="h-2 w-12 bg-blue-200/10 rounded-full"></div>
-                      </div>
-                    </div>
-                    <div className="flex-1 bg-[#151E3D] rounded-2xl border border-blue-400/10 mt-1 p-4 space-y-3">
-                       <div className="h-3 w-3/4 bg-blue-200/10 rounded-full"></div>
-                       <div className="h-3 w-1/2 bg-blue-200/10 rounded-full"></div>
-                    </div>
-                  </div>
+                  <video 
+                    src="/pos-video.mp4" 
+                    className="w-full h-auto object-cover"
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    controls
+                  >
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               </div>
               
