@@ -35,7 +35,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src="/logo-icon-transparent.png" 
+              src="/logo.png" 
               alt="ADK Software Solutions Logo" 
               className="h-10 w-auto object-contain transform group-hover:scale-105 transition-transform" 
             />

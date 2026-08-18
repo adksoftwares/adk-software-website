@@ -11,9 +11,9 @@ const Footer = () => {
             <div>
               <Link to="/" className="flex items-center gap-3 mb-6 group inline-flex">
                 <img 
-                  src="/logo-icon-transparent.png" 
+                  src="/logo.png" 
                   alt="ADK Software Solutions Logo" 
-                  className="h-12 w-auto object-contain group-hover:scale-105 transition-transform" 
+                  className="h-8 w-auto object-contain transform group-hover:scale-105 transition-transform" 
                 />
                 <div className="flex flex-col justify-center">
                   <span className="font-bold text-xl text-white leading-none tracking-wide mb-1">ADK</span>
