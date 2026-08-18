@@ -47,15 +47,31 @@ const Home = () => {
             High-performance software designed around your actual business workflows. From native applications and smart POS systems to custom business automation.
           </motion.p>
           
-          <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_25px_rgba(6,182,212,0.5)]">
-              Start a project
-            </Link>
-            <Link to="/services" className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-[#1C2541]/80 hover:bg-[#1C2541] text-white font-medium border border-blue-400/20 transition-all backdrop-blur-sm">
-              Explore expertise
-            </Link>
+          <motion.div variants={fadeUp}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://calendly.com/adksoftwares/15min" target="_blank" rel="noopener noreferrer" className="bg-cyan-500 hover:bg-cyan-400 text-[#0B132B] px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] flex items-center justify-center">
+                Book a 15-Min Discovery Call
+              </a>
+              <Link to="/portfolio" className="bg-blue-400/10 hover:bg-blue-400/20 border border-blue-400/20 text-white px-8 py-4 rounded-xl font-bold transition-all flex items-center justify-center">
+                See Live Projects
+              </Link>
+            </div>
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* Tech Stack Section */}
+      <section className="py-12 border-y border-blue-500/10 bg-[#0A1128] overflow-hidden relative shadow-inner">
+        <div className="max-w-7xl mx-auto px-4 text-center mb-8">
+           <p className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">Powered by Modern Technology Stack</p>
+        </div>
+        <div className="flex gap-4 md:gap-8 items-center justify-center flex-wrap max-w-5xl mx-auto">
+           {['React.js', 'Node.js', 'Kotlin / Android', 'Firebase', 'AWS Cloud', 'Tailwind CSS'].map(tech => (
+             <div key={tech} className="px-6 py-3 rounded-xl bg-[#151E3D] border border-blue-400/20 text-blue-100 font-medium shadow-md hover:border-cyan-500/40 hover:text-cyan-300 transition-colors cursor-default">
+                {tech}
+             </div>
+           ))}
+        </div>
       </section>
 
       {/* Problem-Solution Section */}
