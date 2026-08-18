@@ -50,9 +50,9 @@ const About = () => {
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl"></div>
               <h3 className="text-2xl font-bold text-white mb-8">Founder</h3>
-              <div className="flex flex-col sm:flex-row items-start gap-6">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-cyan-500/20 shrink-0 shadow-[0_0_20px_rgba(6,182,212,0.15)] overflow-hidden">
-                   <img src="/founder.jpg" alt="S. Arikarran" className="w-full h-full object-cover" />
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-full border-2 border-cyan-500/20 shrink-0 shadow-[0_0_20px_rgba(6,182,212,0.15)] overflow-hidden">
+                   <img src="/founder.jpg" alt="S. Arikarran" className="w-full h-full object-cover object-[center_15%]" />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-white mb-1">S. Arikarran</h4>
