@@ -58,6 +58,22 @@ const Home = () => {
         </motion.div>
       </section>
 
+      {/* Problem-Solution Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-gradient-to-r from-blue-900/40 to-cyan-900/20 border border-cyan-500/20 rounded-3xl p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
+            Billing taking too long? <br className="hidden md:block" /> Stock counts not matching?
+          </h2>
+          <p className="text-xl text-cyan-100/80 mb-8 max-w-2xl mx-auto">
+            Stop struggling with manual processes. Simplify your business and boost your revenue with our custom Smart Software solutions.
+          </p>
+          <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-[#0B132B] px-8 py-4 rounded-xl font-bold hover:bg-cyan-50 transition-colors shadow-lg">
+            Request a 7-Day Free Trial
+          </a>
+        </motion.div>
+      </section>
+
       {/* 2. Feature Grid */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="mb-16">
