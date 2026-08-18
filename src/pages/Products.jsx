@@ -39,12 +39,19 @@ const Products = () => {
             >
               
               <div className="w-full lg:w-1/2">
-                <div className="aspect-[4/3] rounded-3xl bg-[#151E3D] border border-blue-400/10 p-8 shadow-lg flex items-center justify-center relative overflow-hidden group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="text-center z-10">
-                     {/* Replace with actual image later */}
-                     <span className="text-2xl font-bold text-white/20">Product Preview</span>
-                  </div>
+                <div className="aspect-[16/10] rounded-[2rem] bg-[#0B132B] border border-blue-400/10 p-2 shadow-lg flex items-center justify-center relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10"></div>
+                  
+                  {product.video ? (
+                    <video src={product.video} autoPlay loop muted playsInline className="w-full h-full object-cover rounded-2xl" />
+                  ) : product.image ? (
+                    <img src={product.image} alt={product.title} className="w-full h-full object-contain rounded-2xl" />
+                  ) : (
+                    <div className="text-center z-10">
+                       <span className="text-2xl font-bold text-white/20">Product Preview</span>
+                    </div>
+                  )}
+                  
                 </div>
               </div>
               

@@ -14,6 +14,6 @@ export const products = [
       'Mobile-Friendly Interface',
       'Business Insights'
     ],
-    mockup: 'mockup-smartpos.png' // We will add placeholder images or rely on styling
+    video: '/pos-video.mp4'
   }
 ];
