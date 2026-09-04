@@ -52,9 +52,9 @@ const Products = () => {
               <div className="w-full lg:w-1/2">
                 <div className="bg-[#0A1128] border border-blue-500/20 flex items-center justify-center relative overflow-hidden">
                   {product.video ? (
-                    <video src={product.video} autoPlay loop muted playsInline controls className="w-full h-auto object-cover grayscale-[30%]" />
+                    <video src={product.video} autoPlay loop muted playsInline controls className="w-full h-auto object-cover" />
                   ) : product.image ? (
-                    <img src={product.image} alt={product.title} className="w-full h-auto object-contain grayscale-[30%]" />
+                    <img src={product.image} alt={product.title} className="w-full h-auto object-contain" />
                   ) : (
                     <div className="text-center p-10">
                        <span className="text-lg font-medium text-blue-100/30">Interface Preview</span>

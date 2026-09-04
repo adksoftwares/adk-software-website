@@ -23,7 +23,7 @@ const Portfolio = () => {
               <div className="md:w-1/3 shrink-0">
                 <div className="bg-[#0A1128] border border-blue-500/10 overflow-hidden mb-4">
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className="w-full h-auto object-cover grayscale-[40%] hover:grayscale-0 transition-all" />
+                    <img src={project.image} alt={project.title} className="w-full h-auto object-cover" />
                   ) : (
                     <div className="aspect-[4/3] flex items-center justify-center text-blue-100/20 font-bold text-xl bg-[#0A1128]">
                       {project.title}
