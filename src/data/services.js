@@ -4,37 +4,37 @@ export const services = [
   {
     id: 'smart-pos',
     title: 'Smart POS Solutions',
-    description: 'Modern point-of-sale systems designed to simplify retail operations.',
+    description: 'Practical point-of-sale systems that run on mobile hardware to simplify retail sales and inventory management.',
     icon: MonitorSmartphone,
   },
   {
     id: 'android-apps',
-    title: 'Native Android Applications',
-    description: 'Fast and reliable Android applications designed for real-world business requirements.',
+    title: 'Android App Development',
+    description: 'Native Android applications built for businesses, organizations, and specific operational needs.',
     icon: Zap,
   },
   {
     id: 'web-apps',
-    title: 'Web Applications',
-    description: 'Modern responsive web applications and business platforms.',
+    title: 'Web Application Development',
+    description: 'Business-focused web applications designed around real workflows and day-to-day operations.',
     icon: LayoutTemplate,
   },
   {
     id: 'business-automation',
     title: 'Business Automation',
-    description: 'Automate repetitive workflows and reduce unnecessary manual work.',
+    description: 'Custom internal systems that reduce manual data entry and scale business capacity.',
     icon: Briefcase,
   },
   {
     id: 'custom-software',
-    title: 'Custom Software Development',
-    description: "Software designed specifically around each client's requirements.",
+    title: 'Custom Software',
+    description: 'Software engineered specifically to address unique organizational constraints and requirements.',
     icon: Code2,
   },
   {
     id: 'system-integration',
     title: 'System Integration',
-    description: 'Connect business applications, databases, devices, and services into a unified workflow.',
+    description: 'Connecting separate business applications, databases, and services into a unified, reliable workflow.',
     icon: GitBranch,
   }
 ];

@@ -1,18 +1,15 @@
 export const products = [
   {
     id: 'smartpos-lanka',
-    name: 'SmartPOS Lanka',
-    category: 'Retail Technology / POS',
-    description: 'An all-in-one mobile retail POS solution designed to simplify everyday business operations.',
+    title: 'SmartPOS Lanka',
+    category: 'Retail POS',
+    description: 'A mobile-first point-of-sale application designed to manage sales, track inventory, and generate receipts without requiring expensive legacy hardware.',
     features: [
-      'Sales Management',
-      'Product Management',
-      'Inventory Management',
-      'Sales Reports',
-      'Receipt Management',
-      'Customer Management',
-      'Mobile-Friendly Interface',
-      'Business Insights'
+      'Sales and Receipt Management',
+      'Real-time Inventory Tracking',
+      'Daily Sales Reports and Analytics',
+      'Customer Database Management',
+      'Mobile-optimized Interface'
     ],
     video: '/pos-video.mp4'
   }

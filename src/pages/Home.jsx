@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, MonitorSmartphone, Zap, Code2, ShieldCheck, Box, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { MonitorSmartphone, Zap, Code2, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 const fadeUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 10 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.4 }
 };
 
 const stagger = {
@@ -15,45 +15,30 @@ const stagger = {
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B132B] selection:bg-cyan-500/30">
+    <div className="flex flex-col min-h-screen bg-[#0B132B]">
       
-      {/* 1. Hero Section - Deep Ocean Blue */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden flex flex-col items-center text-center">
-        
-        {/* Subtle Glowing Background Effects matching the Logo */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] opacity-40 pointer-events-none -z-10">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 blur-[120px] rounded-full mix-blend-screen transform scale-x-150"></div>
-        </div>
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent"></div>
-
+      {/* 1. Hero Section */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
         <motion.div 
           initial="initial" animate="whileInView" variants={stagger}
           className="max-w-4xl mx-auto relative z-10"
         >
-          <motion.div variants={fadeUp} className="mb-8 inline-flex items-center gap-3 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-900/30 backdrop-blur-md">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-            </span>
-            <span className="text-sm font-medium text-cyan-300 tracking-wide">ADK Software Solutions</span>
-          </motion.div>
-          
-          <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-            Engineering smarter <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-300">digital solutions.</span>
+          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+            We build software that <br className="hidden md:block"/>
+            solves real problems.
           </motion.h1>
           
           <motion.p variants={fadeUp} className="text-lg md:text-xl text-blue-100/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-            High-performance software designed around your actual business workflows. From native applications and smart POS systems to custom business automation.
+            ADK Software Solutions designs and develops business software, mobile applications, and digital systems for organizations that need technology that actually works in the real world.
           </motion.p>
           
           <motion.div variants={fadeUp}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://calendly.com/adksoftwares/15min" target="_blank" rel="noopener noreferrer" className="bg-cyan-500 hover:bg-cyan-400 text-[#0B132B] px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] flex items-center justify-center">
-                Book a 15-Min Discovery Call
+              <a href="https://calendly.com/adksoftwares/15min" target="_blank" rel="noopener noreferrer" className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3.5 rounded-lg font-semibold transition-colors flex items-center justify-center">
+                Discuss your project
               </a>
-              <Link to="/portfolio" className="bg-blue-400/10 hover:bg-blue-400/20 border border-blue-400/20 text-white px-8 py-4 rounded-xl font-bold transition-all flex items-center justify-center">
-                See Live Projects
+              <Link to="/portfolio" className="bg-[#151E3D] hover:bg-[#1C2852] border border-blue-500/20 text-white px-8 py-3.5 rounded-lg font-semibold transition-colors flex items-center justify-center">
+                See our work
               </Link>
             </div>
           </motion.div>
@@ -61,13 +46,13 @@ const Home = () => {
       </section>
 
       {/* Tech Stack Section */}
-      <section className="py-12 border-y border-blue-500/10 bg-[#0A1128] overflow-hidden relative shadow-inner">
+      <section className="py-12 border-y border-blue-500/10 bg-[#0A1128]">
         <div className="max-w-7xl mx-auto px-4 text-center mb-8">
-           <p className="text-cyan-400 font-semibold tracking-wider text-sm uppercase">Powered by Modern Technology Stack</p>
+           <p className="text-blue-200/50 font-semibold tracking-wider text-sm uppercase">Technologies we work with</p>
         </div>
         <div className="flex gap-4 md:gap-8 items-center justify-center flex-wrap max-w-5xl mx-auto">
            {['React.js', 'Node.js', 'Kotlin / Android', 'Firebase', 'AWS Cloud', 'Tailwind CSS'].map(tech => (
-             <div key={tech} className="px-6 py-3 rounded-xl bg-[#151E3D] border border-blue-400/20 text-blue-100 font-medium shadow-md hover:border-cyan-500/40 hover:text-cyan-300 transition-colors cursor-default">
+             <div key={tech} className="px-5 py-2 rounded-lg bg-[#151E3D] border border-blue-500/10 text-blue-100/80 font-medium cursor-default">
                 {tech}
              </div>
            ))}
@@ -75,119 +60,109 @@ const Home = () => {
       </section>
 
       {/* Problem-Solution Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-gradient-to-r from-blue-900/40 to-cyan-900/20 border border-cyan-500/20 rounded-3xl p-8 md:p-12 text-center shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
-          <h2 className="text-2xl md:text-4xl font-bold text-white mb-6">
-            Billing taking too long? <br className="hidden md:block" /> Stock counts not matching?
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
+        <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-[#151E3D] border border-blue-500/10 rounded-2xl p-8 md:p-12 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Billing taking too long? Stock counts not matching?
           </h2>
-          <p className="text-xl text-cyan-100/80 mb-8 max-w-2xl mx-auto">
-            Stop struggling with manual processes. Simplify your business and boost your revenue with our custom Smart Software solutions.
+          <p className="text-lg text-blue-100/70 mb-8 max-w-2xl mx-auto leading-relaxed">
+            We build practical software to replace manual workflows and streamline your daily operations. Stop struggling with inefficient processes and scale your capacity.
           </p>
-          <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-[#0B132B] px-8 py-4 rounded-xl font-bold hover:bg-cyan-50 transition-colors shadow-lg">
+          <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-[#0B132B] px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
             Request a 7-Day Free Trial
           </a>
         </motion.div>
       </section>
 
-      {/* 2. Feature Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">Core Capabilities</h2>
-          <p className="text-blue-200/60 text-lg max-w-xl">Software tailored to your actual business workflows, designed to maximize efficiency.</p>
+      {/* Feature Grid */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-white mb-3">What we build</h2>
+          <p className="text-blue-100/60 text-lg max-w-xl">Software tailored to your actual business workflows.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {/* Card 1 */}
-          <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-[#151E3D] border border-blue-400/10 hover:border-cyan-500/50 transition-colors duration-300 rounded-3xl p-8 flex flex-col group shadow-lg">
-            <div className="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(6,182,212,0.1)]">
-              <MonitorSmartphone size={24} />
+          <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-[#151E3D] border border-blue-500/10 rounded-2xl p-8 flex flex-col">
+            <div className="w-10 h-10 text-cyan-400 mb-5">
+              <MonitorSmartphone size={32} strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Smart POS Solutions</h3>
-            <p className="text-blue-100/60 mb-6 flex-grow leading-relaxed">
+            <h3 className="text-lg font-bold text-white mb-2">Smart POS Solutions</h3>
+            <p className="text-blue-100/60 flex-grow leading-relaxed">
               Modern point-of-sale systems designed to simplify retail operations and eliminate bulky hardware constraints.
             </p>
           </motion.div>
 
-          {/* Card 2 */}
-          <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-[#151E3D] border border-blue-400/10 hover:border-blue-500/50 transition-colors duration-300 rounded-3xl p-8 flex flex-col group shadow-lg">
-            <div className="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(59,130,246,0.1)]">
-              <Zap size={24} />
+          <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-[#151E3D] border border-blue-500/10 rounded-2xl p-8 flex flex-col">
+            <div className="w-10 h-10 text-blue-400 mb-5">
+              <Zap size={32} strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Native Mobile Apps</h3>
-            <p className="text-blue-100/60 mb-6 flex-grow leading-relaxed">
+            <h3 className="text-lg font-bold text-white mb-2">Native Mobile Apps</h3>
+            <p className="text-blue-100/60 flex-grow leading-relaxed">
               Fast, reliable Android applications designed specifically for real-world business requirements.
             </p>
           </motion.div>
 
-          {/* Card 3 */}
-          <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-[#151E3D] border border-blue-400/10 hover:border-teal-500/50 transition-colors duration-300 rounded-3xl p-8 flex flex-col group shadow-lg">
-            <div className="w-12 h-12 bg-teal-500/10 text-teal-400 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(20,184,166,0.1)]">
-              <Code2 size={24} />
+          <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="bg-[#151E3D] border border-blue-500/10 rounded-2xl p-8 flex flex-col">
+            <div className="w-10 h-10 text-indigo-400 mb-5">
+              <Code2 size={32} strokeWidth={1.5} />
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Business Automation</h3>
-            <p className="text-blue-100/60 mb-6 flex-grow leading-relaxed">
-              Identify repetitive workflows and build custom software to reduce manual effort and scale capacity.
+            <h3 className="text-lg font-bold text-white mb-2">Business Automation</h3>
+            <p className="text-blue-100/60 flex-grow leading-relaxed">
+              Custom internal systems built to reduce manual effort, organize data, and scale business capacity.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* 3. SmartPOS Lanka Highlight */}
-      <section className="py-24 relative overflow-hidden border-t border-blue-500/10 bg-gradient-to-b from-[#102135] to-[#0A1624]">
+      {/* SmartPOS Lanka Highlight */}
+      <section className="py-24 border-t border-blue-500/10 bg-[#0A1128]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             
-            <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="order-2 lg:order-1 relative">
-              {/* Video Player Mockup */}
-              <div className="relative mx-auto w-full max-w-xl bg-[#1C2541] rounded-[1.5rem] md:rounded-[2.5rem] border border-blue-400/20 p-2 shadow-2xl z-10">
-                <div className="w-full bg-[#102135] rounded-[1rem] md:rounded-[2rem] overflow-hidden flex flex-col relative border border-blue-400/10">
-                  <div className="h-10 md:h-12 bg-[#151E3D] flex items-center px-6 border-b border-blue-400/10">
-                    <div className="flex gap-2">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-                    </div>
-                    <span className="font-semibold text-xs text-white/50 ml-4">SmartPOS Lanka Demo</span>
+            <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="order-2 lg:order-1">
+              <div className="w-full bg-[#102135] rounded-xl overflow-hidden flex flex-col border border-blue-500/20 shadow-lg">
+                <div className="h-10 bg-[#151E3D] flex items-center px-4 border-b border-blue-500/10">
+                  <div className="flex gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-red-400/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-green-400/80"></div>
                   </div>
-                  <video 
-                    src="/pos-video.mp4" 
-                    className="w-full h-auto object-cover"
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    controls
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                  <span className="font-medium text-xs text-blue-100/40 ml-4">SmartPOS Lanka Overview</span>
                 </div>
+                <video 
+                  src="/pos-video.mp4" 
+                  className="w-full h-auto object-cover"
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  controls
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
-              
-              {/* Decorative Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-cyan-500/15 rounded-full blur-[80px] -z-10"></div>
             </motion.div>
             
             <motion.div initial="initial" whileInView="whileInView" variants={fadeUp} className="order-1 lg:order-2">
-              <span className="text-cyan-400 font-semibold uppercase tracking-widest text-xs mb-4 block">Flagship Product</span>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight">
-                An all-in-one <br/> mobile retail POS.
+              <span className="text-cyan-400 font-semibold uppercase tracking-widest text-xs mb-3 block">Flagship Product</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+                SmartPOS Lanka
               </h2>
-              <p className="text-lg text-blue-100/60 mb-10 leading-relaxed max-w-lg">
-                SmartPOS Lanka brings essential retail operations into a streamlined, mobile-first interface. Manage sales, track inventory, and generate insights without expensive legacy hardware.
+              <p className="text-lg text-blue-100/70 mb-8 leading-relaxed max-w-lg">
+                A point-of-sale system designed to simplify everyday retail operations, including sales processing, real-time inventory tracking, and receipt management—all from a mobile-first interface.
               </p>
               
-              <ul className="space-y-4 mb-10 max-w-lg">
-                {['Sales & Receipt Management', 'Real-time Inventory Tracking', 'Customer Management', 'Business Analytics & Insights'].map((feature, i) => (
+              <ul className="space-y-3 mb-10 max-w-lg">
+                {['Sales & Receipt Management', 'Real-time Inventory Tracking', 'Customer Management', 'Business Analytics'].map((feature, i) => (
                   <li key={i} className="flex items-center text-blue-100/80">
-                    <CheckCircle2 size={18} className="text-cyan-400 mr-3 shadow-[0_0_10px_rgba(6,182,212,0.3)] rounded-full" />
+                    <CheckCircle2 size={18} className="text-cyan-500 mr-3" />
                     <span className="font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
               
-              <Link to="/smartpos" className="inline-flex items-center font-medium text-white bg-blue-400/10 hover:bg-blue-400/20 border border-blue-400/20 px-6 py-3 rounded-xl transition-all">
-                Explore the product <ChevronRight size={18} className="ml-1 text-cyan-400" />
+              <Link to="/smartpos" className="inline-flex items-center font-medium text-white bg-[#151E3D] hover:bg-[#1C2852] border border-blue-500/20 px-6 py-2.5 rounded-lg transition-colors">
+                View product <ChevronRight size={18} className="ml-1 text-cyan-400" />
               </Link>
             </motion.div>
 
