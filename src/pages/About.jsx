@@ -31,7 +31,7 @@ const About = () => {
               <h2 className="text-xl font-bold text-white mb-8 border-b border-blue-500/10 pb-4">Founder</h2>
               <div className="flex gap-6 items-start">
                 <div className="w-24 rounded-lg border border-blue-500/20 overflow-hidden bg-[#0A1128] shrink-0">
-                   <img src="/founder.jpg" alt="S. Arikarran" className="w-full h-auto grayscale hover:grayscale-0 transition-all" />
+                   <img src="/founder.jpg" alt="S. Arikarran" className="w-full h-auto rounded-lg" />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1">S. Arikarran</h4>
