@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,39 +85,32 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0B132B] border-b border-blue-500/20 overflow-hidden"
-          >
-            <div className="px-4 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.path}
-                  className={`text-lg font-medium transition-colors ${
-                    location.pathname === link.path 
-                      ? 'text-cyan-400' 
-                      : 'text-blue-100/70 hover:text-white'
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <div className="h-px bg-blue-500/20 my-2"></div>
+      {isOpen && (
+        <div className="md:hidden bg-[#0B132B] border-b border-blue-500/20 overflow-hidden">
+          <div className="px-4 py-6 flex flex-col gap-4">
+            {navLinks.map((link) => (
               <Link
-                to="/contact"
-                className="w-full py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-center font-semibold transition-colors"
+                key={link.name}
+                to={link.path}
+                className={`text-lg font-medium transition-colors ${
+                  location.pathname === link.path 
+                    ? 'text-cyan-400' 
+                    : 'text-blue-100/70 hover:text-white'
+                }`}
               >
-                Contact us
+                {link.name}
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <div className="h-px bg-blue-500/20 my-2"></div>
+            <Link
+              to="/contact"
+              className="w-full py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white text-center font-semibold transition-colors"
+            >
+              Contact us
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

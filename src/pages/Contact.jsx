@@ -1,100 +1,69 @@
-import { motion } from 'framer-motion';
-import { Mail, MapPin, MessageCircle } from 'lucide-react';
-
 const Contact = () => {
   return (
     <div className="pt-32 pb-24 min-h-screen bg-[#0B132B]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
         
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.h1 
-            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
-          >
+        <div className="mb-20 border-b border-blue-500/10 pb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Contact Us
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1 }}
-            className="text-lg text-blue-200/60 leading-relaxed"
-          >
+          </h1>
+          <p className="text-lg text-blue-200/60 leading-relaxed max-w-2xl">
             Tell us about the software or system you need. We will get back to you to discuss the technical requirements.
-          </motion.p>
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-8">
+        <div className="flex flex-col md:flex-row gap-16">
           
-          <motion.div 
-            initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.2 }}
-            className="lg:col-span-2 space-y-8"
-          >
-            <div className="bg-[#151E3D] border border-blue-500/10 p-8 rounded-2xl shadow-sm">
-              <h3 className="text-2xl font-bold text-white mb-8">Contact Info</h3>
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-lg bg-[#0A1128] border border-blue-500/10 text-cyan-400 flex items-center justify-center shrink-0 mr-4">
-                    <Mail size={18} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200/50 mb-1">Email</p>
-                    <a href="mailto:contact@adksoftwares.com" className="text-white hover:text-cyan-400 transition-colors font-medium">contact@adksoftwares.com</a>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-lg bg-[#0A1128] border border-blue-500/10 text-green-400 flex items-center justify-center shrink-0 mr-4">
-                    <MessageCircle size={18} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200/50 mb-1">WhatsApp</p>
-                    <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-400 transition-colors font-medium">+94 72 344 0137</a>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <div className="w-10 h-10 rounded-lg bg-[#0A1128] border border-blue-500/10 text-teal-400 flex items-center justify-center shrink-0 mr-4">
-                    <MapPin size={18} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200/50 mb-1">Location</p>
-                    <p className="text-white font-medium">Kandy, Sri Lanka</p>
-                  </div>
-                </div>
+          <div className="md:w-1/3 space-y-8">
+            <h3 className="text-xl font-bold text-white mb-6">Contact Info</h3>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm text-blue-200/50 mb-1">Email</p>
+                <a href="mailto:contact@adksoftwares.com" className="text-white hover:text-cyan-400 transition-colors font-medium">contact@adksoftwares.com</a>
+              </div>
+              <div>
+                <p className="text-sm text-blue-200/50 mb-1">WhatsApp</p>
+                <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="text-white hover:text-cyan-400 transition-colors font-medium">+94 72 344 0137</a>
+              </div>
+              <div>
+                <p className="text-sm text-blue-200/50 mb-1">Location</p>
+                <p className="text-white font-medium">Kandy, Sri Lanka</p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.4, delay: 0.3 }}
-            className="lg:col-span-3 bg-[#151E3D] border border-blue-500/10 rounded-2xl p-8 lg:p-12 shadow-sm"
-          >
+          <div className="md:w-2/3 border-t md:border-t-0 md:border-l border-blue-500/10 pt-12 md:pt-0 md:pl-16">
+            <h3 className="text-xl font-bold text-white mb-6">Submit Request</h3>
             <form action="https://formsubmit.co/contact@adksoftwares.com" method="POST" className="space-y-6">
               <input type="hidden" name="_subject" value="New Contact Request from ADK Softwares Website!" />
               <input type="hidden" name="_captcha" value="false" />
               
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-blue-100/70">First Name</label>
-                  <input type="text" name="firstName" required className="w-full bg-[#0A1128] border border-blue-500/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="John" />
+                  <label className="text-sm font-medium text-blue-100/70 block">First Name</label>
+                  <input type="text" name="firstName" required className="w-full bg-[#0A1128] border border-blue-500/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-blue-100/70">Last Name</label>
-                  <input type="text" name="lastName" required className="w-full bg-[#0A1128] border border-blue-500/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="Doe" />
+                  <label className="text-sm font-medium text-blue-100/70 block">Last Name</label>
+                  <input type="text" name="lastName" required className="w-full bg-[#0A1128] border border-blue-500/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm font-medium text-blue-100/70">Email Address</label>
-                <input type="email" name="email" required className="w-full bg-[#0A1128] border border-blue-500/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" placeholder="john@company.com" />
+                <label className="text-sm font-medium text-blue-100/70 block">Email Address</label>
+                <input type="email" name="email" required className="w-full bg-[#0A1128] border border-blue-500/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors" />
               </div>
               
               <div className="space-y-2">
-                <label className="text-sm font-medium text-blue-100/70">Project Details</label>
-                <textarea name="projectDetails" required rows="5" className="w-full bg-[#0A1128] border border-blue-500/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors resize-none" placeholder="Briefly describe what you need to build..."></textarea>
+                <label className="text-sm font-medium text-blue-100/70 block">Project Details</label>
+                <textarea name="projectDetails" required rows="5" className="w-full bg-[#0A1128] border border-blue-500/20 rounded-sm px-4 py-3 text-white focus:outline-none focus:border-cyan-500 transition-colors resize-none"></textarea>
               </div>
               
-              <button type="submit" className="w-full py-3.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-medium transition-colors">
+              <button type="submit" className="px-8 py-3.5 bg-white hover:bg-gray-100 text-[#0B132B] font-bold transition-colors">
                 Send enquiry
               </button>
             </form>
-          </motion.div>
+          </div>
 
         </div>
       </div>
