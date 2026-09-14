@@ -12,7 +12,7 @@ const fadeUp = {
 
 const About = () => {
   return (
-    <div className="pt-40 pb-24 min-h-screen bg-[#0a0a0a]">
+    <div className="pt-40 pb-24 min-h-screen bg-[#070707]">
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         
@@ -29,7 +29,7 @@ const About = () => {
           >
             Company
           </h1>
-          <p className="text-xl text-neutral-400 leading-relaxed border-l-2 border-amber-400/30 pl-4">
+          <p className="text-xl text-neutral-400 leading-relaxed border-l-2 border-[#ccff00]/30 pl-4">
             We build practical digital products and business systems that help organizations run more efficiently.
           </p>
         </motion.div>
@@ -72,18 +72,18 @@ const About = () => {
                 Founder
               </h2>
               <div className="flex gap-6 items-start">
-                <div className="w-24 border border-white/[0.06] overflow-hidden bg-[#0a0a0a] shrink-0">
+                <div className="w-24 border border-white/[0.06] overflow-hidden bg-[#070707] shrink-0">
                    <img src="/founder.jpg" alt="S. Arikarran" className="w-full h-auto" />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1">S. Arikarran</h4>
-                  <p className="text-amber-400 font-medium text-sm mb-3">Software Developer</p>
+                  <p className="text-[#ccff00] font-medium text-sm mb-3">Software Developer</p>
                   <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-4 leading-relaxed">
                     B.Sc. in Biological Science<br/>University of Peradeniya
                   </p>
                 </div>
               </div>
-              <p className="text-neutral-400 text-sm leading-relaxed mt-6 italic border-l-2 border-amber-400/30 pl-4">
+              <p className="text-neutral-400 text-sm leading-relaxed mt-6 italic border-l-2 border-[#ccff00]/30 pl-4">
                 "Founded with a focus on combining analytical thinking, technology, and practical problem-solving to create useful digital solutions for businesses."
               </p>
             </div>
@@ -122,7 +122,7 @@ const About = () => {
                   variants={fadeUp}
                   custom={i}
                 >
-                  <div className="w-10 h-10 bg-[#0a0a0a] border border-white/[0.06] rounded-lg flex items-center justify-center text-amber-400 mb-6">
+                  <div className="w-10 h-10 bg-[#070707] border border-white/[0.06] rounded-lg flex items-center justify-center text-[#ccff00] mb-6">
                     <Icon size={20} strokeWidth={1.5} />
                   </div>
                   <h4 className="text-lg font-bold text-white mb-3">{value.title}</h4>

@@ -14,7 +14,7 @@ const fadeUp = {
 
 const Products = () => {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-[#0a0a0a]">
+    <div className="pt-32 pb-24 min-h-screen bg-[#070707]">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
 
         {/* Hero */}
@@ -25,7 +25,7 @@ const Products = () => {
           viewport={{ once: true, margin: '-60px' }}
           variants={fadeUp}
         >
-          <span className="text-amber-400 font-medium text-sm tracking-[0.2em] uppercase">
+          <span className="text-[#ccff00] font-medium text-sm tracking-[0.2em] uppercase">
             What We Build
           </span>
           <h1
@@ -54,7 +54,7 @@ const Products = () => {
 
               {/* Text column */}
               <div className="w-full lg:w-1/2">
-                <span className="text-amber-400 font-medium text-sm tracking-[0.2em] uppercase">
+                <span className="text-[#ccff00] font-medium text-sm tracking-[0.2em] uppercase">
                   {product.category}
                 </span>
                 <h2
@@ -74,7 +74,7 @@ const Products = () => {
                   <ul className="space-y-3">
                     {product.features.map((feature, i) => (
                       <li key={i} className="flex items-start text-neutral-400">
-                        <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-3 shrink-0 mt-2" />
+                        <span className="w-1.5 h-1.5 bg-[#ccff00] rounded-full mr-3 shrink-0 mt-2" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -83,7 +83,7 @@ const Products = () => {
 
                 <Link
                   to={product.id === 'smartpos-lanka' ? '/smartpos' : '/contact'}
-                  className="inline-flex items-center text-amber-400 font-semibold border-b border-amber-400/30 pb-0.5 hover:border-amber-400 transition-colors"
+                  className="inline-flex items-center text-[#ccff00] font-semibold border-b border-[#ccff00]/30 pb-0.5 hover:border-[#ccff00] transition-colors"
                 >
                   {product.id === 'smartpos-lanka' ? 'View product details' : 'Request demo'}
                   <ChevronRight size={16} className="ml-1" />

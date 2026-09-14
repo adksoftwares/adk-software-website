@@ -14,7 +14,7 @@ const fadeUp = {
 
 const Services = () => {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-[#0a0a0a]">
+    <div className="pt-32 pb-24 min-h-screen bg-[#070707]">
       {/* Header */}
       <section className="px-6 lg:px-8 mb-20 max-w-7xl mx-auto">
         <motion.p
@@ -23,7 +23,7 @@ const Services = () => {
           viewport={{ once: true }}
           variants={fadeUp}
           custom={0}
-          className="text-amber-400 font-medium text-sm tracking-[0.2em] uppercase mb-4"
+          className="text-[#ccff00] font-medium text-sm tracking-[0.2em] uppercase mb-4"
         >
           Our Services
         </motion.p>
@@ -66,10 +66,10 @@ const Services = () => {
                 variants={fadeUp}
                 custom={index}
                 whileHover={{ y: -4 }}
-                className="group flex flex-col bg-[#141414] border border-white/[0.06] hover:border-amber-500/30 transition-colors rounded-xl p-8"
+                className="group flex flex-col bg-[#141414] border border-white/[0.06] hover:border-[#ccff00]/30 transition-colors rounded-xl p-8"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-12 h-12 bg-[#0a0a0a] border border-white/[0.06] rounded-lg flex items-center justify-center text-amber-400 group-hover:bg-amber-500/10 transition-colors">
+                  <div className="w-12 h-12 bg-[#070707] border border-white/[0.06] rounded-lg flex items-center justify-center text-[#ccff00] group-hover:bg-[#ccff00]/10 transition-colors">
                     {Icon && <Icon size={24} strokeWidth={1.5} />}
                   </div>
                   <span className="text-neutral-500 text-sm font-mono font-bold tracking-widest">
@@ -90,7 +90,7 @@ const Services = () => {
 
                 <Link
                   to="/contact"
-                  className="inline-flex items-center text-sm font-semibold text-white group-hover:text-amber-400 transition-colors mt-auto w-fit border-b border-transparent group-hover:border-amber-400 pb-0.5"
+                  className="inline-flex items-center text-sm font-semibold text-white group-hover:text-[#ccff00] transition-colors mt-auto w-fit border-b border-transparent group-hover:border-[#ccff00] pb-0.5"
                 >
                   Discuss project <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>

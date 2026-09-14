@@ -12,7 +12,7 @@ const fadeUp = {
 
 const Portfolio = () => {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-[#0a0a0a]">
+    <div className="pt-32 pb-24 min-h-screen bg-[#070707]">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
 
         <motion.div
@@ -58,7 +58,7 @@ const Portfolio = () => {
 
               <div className="md:w-2/3">
                 <div className="flex flex-wrap gap-2 mb-3">
-                  <span className="text-amber-400 text-xs font-mono tracking-widest uppercase">
+                  <span className="text-[#ccff00] text-xs font-mono tracking-widest uppercase">
                     {project.category}
                   </span>
                 </div>
@@ -87,7 +87,7 @@ const Portfolio = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:text-amber-400 transition-colors text-sm font-semibold underline underline-offset-4 decoration-white/20"
+                    className="text-white hover:text-[#ccff00] transition-colors text-sm font-semibold underline underline-offset-4 decoration-white/20"
                   >
                     View project details
                   </a>

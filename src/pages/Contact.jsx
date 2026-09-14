@@ -3,7 +3,7 @@ import { Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-[#0a0a0a]">
+    <div className="pt-32 pb-24 min-h-screen bg-[#070707]">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
 
         {/* Section Heading */}
@@ -13,7 +13,7 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="mb-20 border-b border-white/[0.06] pb-12"
         >
-          <span className="text-amber-400 text-sm font-medium tracking-widest uppercase mb-4 block">
+          <span className="text-[#ccff00] text-sm font-medium tracking-widest uppercase mb-4 block">
             Get in touch
           </span>
           <h1
@@ -44,21 +44,21 @@ const Contact = () => {
             </h3>
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <Mail className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
+                <Mail className="w-5 h-5 text-[#ccff00] mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-neutral-500 mb-1">Email</p>
-                  <a href="mailto:contact@adksoftwares.com" className="text-white hover:text-amber-400 transition-colors font-medium">contact@adksoftwares.com</a>
+                  <a href="mailto:contact@adksoftwares.com" className="text-white hover:text-[#ccff00] transition-colors font-medium">contact@adksoftwares.com</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <MessageCircle className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
+                <MessageCircle className="w-5 h-5 text-[#ccff00] mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-neutral-500 mb-1">WhatsApp</p>
-                  <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="text-white hover:text-amber-400 transition-colors font-medium">+94 72 344 0137</a>
+                  <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#ccff00] transition-colors font-medium">+94 72 344 0137</a>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <MapPin className="w-5 h-5 text-amber-400 mt-0.5 shrink-0" />
+                <MapPin className="w-5 h-5 text-[#ccff00] mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm text-neutral-500 mb-1">Location</p>
                   <p className="text-white font-medium">Kandy, Sri Lanka</p>
@@ -87,25 +87,25 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-neutral-400 block">First Name</label>
-                  <input type="text" name="firstName" required className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-amber-500 transition-colors" />
+                  <input type="text" name="firstName" required className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#ccff00] transition-colors" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-neutral-400 block">Last Name</label>
-                  <input type="text" name="lastName" required className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-amber-500 transition-colors" />
+                  <input type="text" name="lastName" required className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#ccff00] transition-colors" />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-400 block">Email Address</label>
-                <input type="email" name="email" required className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-amber-500 transition-colors" />
+                <input type="email" name="email" required className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#ccff00] transition-colors" />
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium text-neutral-400 block">Project Details</label>
-                <textarea name="projectDetails" required rows="5" className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-amber-500 transition-colors resize-none"></textarea>
+                <textarea name="projectDetails" required rows="5" className="w-full bg-[#111] border border-white/[0.06] rounded-none px-4 py-3 text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#ccff00] transition-colors resize-none"></textarea>
               </div>
 
-              <button type="submit" className="px-8 py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-none transition-colors">
+              <button type="submit" className="px-8 py-3.5 bg-[#ccff00] hover:bg-[#ccff00] text-black font-semibold rounded-none transition-colors">
                 Send enquiry
               </button>
             </form>
