@@ -1,130 +1,281 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight, CheckCircle2 } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, MonitorSmartphone, Smartphone, Cpu, ChevronRight } from 'lucide-react';
+
+const fadeUp = {
+  initial: { opacity: 0, y: 30 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: '-50px' },
+  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+};
+
+const staggerContainer = {
+  initial: {},
+  animate: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.3 }
+  }
+};
+
+const staggerItem = {
+  initial: { opacity: 0, y: 40 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+};
+
+const TECH_STACK = ['React.js', 'Node.js', 'Kotlin', 'Android', 'Firebase', 'AWS Cloud', 'Tailwind CSS', 'SQLite', 'REST APIs'];
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0B132B]">
+    <div className="flex flex-col min-h-screen bg-[#0a0a0a]">
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-            We build software that <br className="hidden md:block"/>
-            solves real problems.
-          </h1>
+      {/* ═══════════════════════════════════════════════
+          HERO — Oversized, asymmetric, stagger-revealed
+      ═══════════════════════════════════════════════ */}
+      <section className="relative pt-36 pb-24 lg:pt-52 lg:pb-40 px-6 sm:px-8 lg:px-16 overflow-hidden">
+        {/* Subtle gradient accent bleed */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-amber-500/[0.03] rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+        
+        <motion.div 
+          variants={staggerContainer}
+          initial="initial"
+          animate="animate"
+          className="max-w-7xl mx-auto"
+        >
+          <motion.p variants={staggerItem} className="text-amber-400 font-medium text-sm tracking-[0.2em] uppercase mb-8">
+            ADK Software Solutions
+          </motion.p>
           
-          <p className="text-lg md:text-xl text-blue-100/70 max-w-2xl mb-10 leading-relaxed">
-            ADK Software Solutions designs and develops business software, mobile applications, and digital systems for organizations that need technology that actually works in the real world.
-          </p>
+          <motion.h1 
+            variants={staggerItem}
+            className="font-[var(--font-display)] text-5xl md:text-7xl lg:text-[5.5rem] font-bold tracking-tighter text-white mb-8 leading-[0.95] max-w-5xl"
+            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+          >
+            We build software<br />
+            that solves <span className="text-amber-400">real</span> problems.
+          </motion.h1>
           
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a href="https://calendly.com/adksoftwares/15min" target="_blank" rel="noopener noreferrer" className="bg-cyan-600 hover:bg-cyan-500 text-white px-8 py-3.5 rounded-lg font-semibold transition-colors flex items-center justify-center w-fit">
+          <motion.p variants={staggerItem} className="text-lg md:text-xl text-neutral-400 max-w-xl mb-12 leading-relaxed">
+            Business software, mobile applications, and digital systems for organizations that need technology that actually works.
+          </motion.p>
+          
+          <motion.div variants={staggerItem} className="flex flex-col sm:flex-row gap-4">
+            <a 
+              href="https://calendly.com/adksoftwares/15min" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group bg-amber-500 hover:bg-amber-400 text-black px-8 py-4 font-semibold transition-all duration-300 flex items-center justify-center gap-2 w-fit"
+            >
               Discuss your project
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <Link to="/portfolio" className="bg-[#151E3D] hover:bg-[#1C2852] border border-blue-500/20 text-white px-8 py-3.5 rounded-lg font-semibold transition-colors flex items-center justify-center w-fit">
+            <Link 
+              to="/portfolio" 
+              className="border border-white/20 hover:border-white/40 text-white px-8 py-4 font-semibold transition-all duration-300 flex items-center justify-center w-fit hover:bg-white/5"
+            >
               See our work
             </Link>
-          </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════
+          TECH STACK — Infinite Marquee
+      ═══════════════════════════════════════════════ */}
+      <section className="py-8 border-y border-white/[0.06] overflow-hidden">
+        <div className="animate-marquee flex gap-16 items-center whitespace-nowrap">
+          {[...TECH_STACK, ...TECH_STACK].map((tech, i) => (
+            <span key={i} className="text-neutral-500 text-sm font-medium tracking-[0.15em] uppercase flex items-center gap-16">
+              {tech}
+              <span className="text-neutral-700">✦</span>
+            </span>
+          ))}
         </div>
       </section>
 
-      {/* Tech Stack Section (Asymmetrical list) */}
-      <section className="py-12 border-y border-blue-500/10 bg-[#0A1128] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row md:items-center gap-6">
-           <p className="text-blue-200/50 font-semibold tracking-wider text-sm uppercase md:w-1/4">Technologies we work with:</p>
-           <div className="flex flex-wrap gap-4 md:w-3/4">
-             {['React.js', 'Node.js', 'Kotlin / Android', 'Firebase', 'AWS Cloud', 'Tailwind CSS'].map(tech => (
-               <span key={tech} className="text-blue-100/80 font-medium">
-                  {tech} <span className="text-blue-500/30 ml-3 hidden sm:inline-block">/</span>
-               </span>
-             ))}
-           </div>
-        </div>
-      </section>
-
-      {/* Problem-Solution Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
-        <div className="border-l-4 border-cyan-500 pl-6 md:pl-10">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            Billing taking too long? Stock counts not matching?
-          </h2>
-          <p className="text-lg text-blue-100/70 mb-8 max-w-2xl leading-relaxed">
-            We build practical software to replace manual workflows and streamline your daily operations. Stop struggling with inefficient processes and scale your capacity.
-          </p>
-          <a href="https://wa.me/94723440137" target="_blank" rel="noopener noreferrer" className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors inline-flex items-center gap-2">
-            Request a 7-Day Free Trial <ChevronRight size={16} />
-          </a>
-        </div>
-      </section>
-
-      {/* Feature Section (Replaced symmetric grid with a raw list) */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full border-t border-blue-500/10">
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold text-white mb-3">What we build</h2>
-          <p className="text-blue-100/60 text-lg max-w-xl">Software tailored to your actual business workflows.</p>
-        </div>
-
-        <div className="space-y-12">
-          <div className="md:w-2/3">
-            <h3 className="text-xl font-bold text-white mb-2">1. Smart POS Solutions</h3>
-            <p className="text-blue-100/60 leading-relaxed">
-              Modern point-of-sale systems designed to simplify retail operations and eliminate bulky hardware constraints.
+      {/* ═══════════════════════════════════════════════
+          PAIN POINT NARRATIVE — Editorial, scroll-triggered
+      ═══════════════════════════════════════════════ */}
+      <section className="py-32 lg:py-44 px-6 sm:px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            {...fadeUp}
+            className="max-w-4xl"
+          >
+            <h2 
+              className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white mb-8 leading-[1.05]"
+              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+            >
+              Billing taking too long?<br />
+              Stock counts not matching?
+            </h2>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            className="max-w-2xl mt-4"
+          >
+            <p className="text-xl text-neutral-400 leading-relaxed mb-10">
+              We build practical software to replace manual workflows and streamline your daily operations. Stop struggling with inefficient processes — scale your capacity with purpose-built tools.
             </p>
-          </div>
+            <a 
+              href="https://wa.me/94723440137" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group text-amber-400 font-semibold inline-flex items-center gap-2 border-b border-amber-400/30 pb-1 hover:border-amber-400 transition-colors"
+            >
+              Request a 7-Day Free Trial 
+              <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
 
-          <div className="md:w-2/3 md:ml-auto">
-            <h3 className="text-xl font-bold text-white mb-2">2. Native Mobile Apps</h3>
-            <p className="text-blue-100/60 leading-relaxed">
-              Fast, reliable Android applications designed specifically for real-world business requirements.
-            </p>
-          </div>
+      {/* ═══════════════════════════════════════════════
+          OFFERINGS — Bento Grid
+      ═══════════════════════════════════════════════ */}
+      <section className="py-24 px-6 sm:px-8 lg:px-16 border-t border-white/[0.06]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div {...fadeUp} className="mb-16">
+            <p className="text-amber-400 font-medium text-sm tracking-[0.2em] uppercase mb-4">What we build</p>
+            <h2 
+              className="text-3xl md:text-4xl font-bold tracking-tight text-white"
+              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+            >
+              Software tailored to your workflows.
+            </h2>
+          </motion.div>
 
-          <div className="md:w-2/3">
-            <h3 className="text-xl font-bold text-white mb-2">3. Business Automation</h3>
-            <p className="text-blue-100/60 leading-relaxed">
-              Custom internal systems built to reduce manual effort, organize data, and scale business capacity.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* Card 1 — Smart POS (spans 2 cols on lg) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+              className="lg:col-span-2 group bg-[#141414] border border-white/[0.06] hover:border-amber-500/30 p-10 lg:p-14 transition-colors duration-500 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/[0.03] rounded-full blur-[80px] translate-x-1/3 -translate-y-1/3 group-hover:bg-amber-500/[0.06] transition-colors duration-700 pointer-events-none" />
+              <MonitorSmartphone size={28} strokeWidth={1.5} className="text-amber-400 mb-8" />
+              <h3 className="text-2xl font-bold text-white mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                Smart POS Solutions
+              </h3>
+              <p className="text-neutral-400 leading-relaxed max-w-lg text-lg">
+                Modern point-of-sale systems designed to simplify retail operations and eliminate bulky hardware constraints. Built mobile-first.
+              </p>
+            </motion.div>
+
+            {/* Card 2 — Native Mobile */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+              className="group bg-[#141414] border border-white/[0.06] hover:border-white/20 p-10 transition-colors duration-500"
+            >
+              <Smartphone size={28} strokeWidth={1.5} className="text-neutral-500 group-hover:text-amber-400 transition-colors duration-500 mb-8" />
+              <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                Native Mobile Apps
+              </h3>
+              <p className="text-neutral-500 leading-relaxed">
+                Fast, reliable Android applications designed specifically for real-world business requirements.
+              </p>
+            </motion.div>
+
+            {/* Card 3 — Business Automation */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+              whileHover={{ y: -4, transition: { duration: 0.3 } }}
+              className="group bg-[#141414] border border-white/[0.06] hover:border-white/20 p-10 transition-colors duration-500"
+            >
+              <Cpu size={28} strokeWidth={1.5} className="text-neutral-500 group-hover:text-amber-400 transition-colors duration-500 mb-8" />
+              <h3 className="text-xl font-bold text-white mb-3" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                Business Automation
+              </h3>
+              <p className="text-neutral-500 leading-relaxed">
+                Custom internal systems built to reduce manual effort, organize data, and scale business capacity.
+              </p>
+            </motion.div>
+
+            {/* Card 4 — CTA card */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+              className="lg:col-span-2 bg-[#141414] border border-white/[0.06] p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6"
+            >
+              <div>
+                <p className="text-white font-semibold text-lg mb-1">Have a project in mind?</p>
+                <p className="text-neutral-500">Let's discuss the technical requirements.</p>
+              </div>
+              <Link 
+                to="/contact" 
+                className="group bg-white text-black px-6 py-3 font-semibold flex items-center gap-2 hover:bg-neutral-200 transition-colors shrink-0"
+              >
+                Get in touch <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* SmartPOS Lanka Highlight */}
-      <section className="py-24 border-t border-blue-500/10 bg-[#0A1128]">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
+      {/* ═══════════════════════════════════════════════
+          SPOTLIGHT — SmartPOS Lanka
+      ═══════════════════════════════════════════════ */}
+      <section className="py-32 px-6 sm:px-8 lg:px-16 border-t border-white/[0.06] bg-[#080808]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            <div className="lg:w-1/2 order-2 lg:order-1">
-              <span className="text-cyan-400 font-semibold uppercase tracking-widest text-xs mb-3 block">Flagship Product</span>
-              <h2 className="text-3xl font-bold text-white mb-5">
-                SmartPOS Lanka
+            {/* Text — 5 cols */}
+            <motion.div 
+              {...fadeUp}
+              className="lg:col-span-5 order-2 lg:order-1"
+            >
+              <p className="text-amber-400 font-medium text-sm tracking-[0.2em] uppercase mb-4">Flagship Product</p>
+              <h2 
+                className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-6 leading-[1.05]"
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              >
+                SmartPOS<br />Lanka
               </h2>
-              <p className="text-lg text-blue-100/70 mb-8 leading-relaxed">
-                A point-of-sale system designed to simplify everyday retail operations, including sales processing, real-time inventory tracking, and receipt management—all from a mobile-first interface.
+              <p className="text-lg text-neutral-400 mb-10 leading-relaxed">
+                A point-of-sale system designed to simplify everyday retail operations — sales processing, real-time inventory tracking, and receipt management, all from a mobile-first interface.
               </p>
               
-              <ul className="space-y-3 mb-10">
+              <div className="space-y-4 mb-10">
                 {['Sales & Receipt Management', 'Real-time Inventory Tracking', 'Customer Management', 'Business Analytics'].map((feature, i) => (
-                  <li key={i} className="flex items-center text-blue-100/80">
-                    <CheckCircle2 size={16} className="text-cyan-500 mr-3" />
+                  <div key={i} className="flex items-center text-neutral-300">
+                    <span className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-4 shrink-0" />
                     <span className="font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Link to="/smartpos" className="text-cyan-400 font-semibold hover:text-cyan-300 transition-colors inline-flex items-center gap-2">
-                View product details <ChevronRight size={16} />
-              </Link>
-            </div>
-
-            <div className="lg:w-1/2 order-1 lg:order-2 w-full">
-              <div className="w-full bg-[#102135] rounded-xl overflow-hidden flex flex-col border border-blue-500/20 shadow-sm">
-                <div className="h-8 bg-[#151E3D] flex items-center px-4 border-b border-blue-500/10">
-                  <div className="flex gap-2">
-                    <div className="w-2.5 h-2.5 rounded-full bg-blue-500/20"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-blue-500/20"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-blue-500/20"></div>
                   </div>
-                </div>
+                ))}
+              </div>
+              
+              <Link 
+                to="/smartpos" 
+                className="group text-amber-400 font-semibold inline-flex items-center gap-2 border-b border-amber-400/30 pb-1 hover:border-amber-400 transition-colors"
+              >
+                View product details 
+                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+
+            {/* Video — 7 cols */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="lg:col-span-7 order-1 lg:order-2"
+            >
+              <div className="bg-[#111] border border-white/[0.06] overflow-hidden">
                 <video 
                   src="/pos-video.mp4" 
                   className="w-full h-auto object-cover"
@@ -137,7 +288,7 @@ const Home = () => {
                   Your browser does not support the video tag.
                 </video>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

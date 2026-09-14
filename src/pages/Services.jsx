@@ -1,49 +1,100 @@
+import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import { services } from '../data/services';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 32 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] },
+  }),
+};
 
 const Services = () => {
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-[#0B132B]">
-      <section className="px-6 mb-20 max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+    <div className="pt-32 pb-24 min-h-screen bg-[#0a0a0a]">
+      {/* Header */}
+      <section className="px-6 lg:px-8 mb-20 max-w-7xl mx-auto">
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          custom={0}
+          className="text-amber-400 font-medium text-sm tracking-[0.2em] uppercase mb-4"
+        >
+          Our Services
+        </motion.p>
+
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          custom={1}
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tighter mb-6"
+          style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+        >
           Services
-        </h1>
-        <p className="text-lg text-blue-100/70 leading-relaxed max-w-2xl border-l-2 border-cyan-500 pl-4">
+        </motion.h1>
+
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          custom={2}
+          className="text-lg text-neutral-400 leading-relaxed max-w-2xl"
+        >
           We develop custom software, mobile applications, and internal systems to replace manual workflows and support daily operations.
-        </p>
+        </motion.p>
       </section>
 
+      {/* Services Grid */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 border-t border-blue-500/10 pt-16">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 border-t border-white/[0.06] pt-16">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div 
-                key={service.id} 
-                className="group flex flex-col bg-[#101835] border border-blue-500/20 hover:border-cyan-500/50 hover:bg-[#151E3D] transition-colors rounded-xl p-8"
+              <motion.div
+                key={service.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={index}
+                whileHover={{ y: -4 }}
+                className="group flex flex-col bg-[#141414] border border-white/[0.06] hover:border-amber-500/30 transition-colors rounded-xl p-8"
               >
                 <div className="flex items-center justify-between mb-8">
-                  <div className="w-12 h-12 bg-[#0B132B] border border-blue-500/20 rounded-lg flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500/10 transition-colors">
+                  <div className="w-12 h-12 bg-[#0a0a0a] border border-white/[0.06] rounded-lg flex items-center justify-center text-amber-400 group-hover:bg-amber-500/10 transition-colors">
                     {Icon && <Icon size={24} strokeWidth={1.5} />}
                   </div>
-                  <span className="text-blue-200/30 text-sm font-mono font-bold tracking-widest">
+                  <span className="text-neutral-500 text-sm font-mono font-bold tracking-widest">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
-                
-                <h3 className="text-2xl font-bold text-white mb-4">
+
+                <h3
+                  className="text-2xl font-bold text-white tracking-tight mb-4"
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                >
                   {service.title}
                 </h3>
-                
-                <p className="text-blue-100/60 leading-relaxed text-base flex-grow mb-8">
+
+                <p className="text-neutral-400 leading-relaxed text-base flex-grow mb-8">
                   {service.description}
                 </p>
 
-                <Link to="/contact" className="inline-flex items-center text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors mt-auto w-fit border-b border-transparent group-hover:border-cyan-400 pb-0.5">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center text-sm font-semibold text-white group-hover:text-amber-400 transition-colors mt-auto w-fit border-b border-transparent group-hover:border-amber-400 pb-0.5"
+                >
                   Discuss project <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
                 </Link>
-              </div>
+              </motion.div>
             );
           })}
         </div>
