@@ -79,7 +79,7 @@ const About = () => {
                   <h4 className="text-lg font-bold text-white mb-1">S. Arikarran</h4>
                   <p className="text-[#ccff00] font-medium text-sm mb-3">Software Developer</p>
                   <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-4 leading-relaxed">
-                    B.Sc. in Biological Science<br/>University of Peradeniya
+                    BSc in Biological Science(R)<br/>University of Peradeniya
                   </p>
                 </div>
               </div>
