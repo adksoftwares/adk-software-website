@@ -73,12 +73,12 @@ const About = () => {
               </h2>
               <div className="flex gap-6 items-start">
                 <div className="w-24 border border-white/[0.06] overflow-hidden bg-[#070707] shrink-0">
-                   <img src="/founder.jpg" alt="S. Arikarran" className="w-full h-auto" />
+                   <img src="/founder-arikarran.jpg" alt="S. Arikarran" className="w-full h-auto object-cover" />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1">S. Arikarran</h4>
                   <p className="text-[#ccff00] font-medium text-sm mb-3">Software Developer</p>
-                  <p className="text-xs font-medium text-neutral-500 uppercase tracking-wider mb-4 leading-relaxed">
+                  <p className="text-xs font-medium text-neutral-400 mb-4 leading-relaxed">
                     BSc in Biological Science(R)<br/>University of Peradeniya
                   </p>
                 </div>
