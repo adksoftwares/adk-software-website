@@ -35,9 +35,9 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative flex items-center justify-center">
               <img 
-                src="/logo.png" 
+                src="/logo.png?v=3" 
                 alt="ADK Software Solutions Logo" 
-                className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+                className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
               />
             </div>
             <div className="flex flex-col">

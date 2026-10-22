@@ -54,6 +54,17 @@ const About = () => {
             <p className="leading-relaxed">
               By combining analytical problem-solving with modern software technologies, we aim to create simple, efficient, and scalable digital solutions that help businesses streamline operations and grow.
             </p>
+            <div className="flex items-center gap-5 p-5 bg-[#141414] border border-white/[0.06] mt-8">
+              <img src="/logo.png?v=3" alt="ADK Emblem" className="w-12 h-12 object-contain" />
+              <div>
+                <h4 className="text-white font-bold text-base tracking-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                  ADK Software Solutions
+                </h4>
+                <p className="text-xs font-mono text-[#ccff00] tracking-wider uppercase">
+                  Engineered for Reality · Kandy, Sri Lanka
+                </p>
+              </div>
+            </div>
           </motion.div>
           
           <motion.div

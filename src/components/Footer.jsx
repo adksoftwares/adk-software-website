@@ -13,9 +13,9 @@ const Footer = () => {
             <div>
               <Link to="/" className="flex items-center gap-3 mb-5 inline-flex group">
                 <img 
-                  src="/logo.png" 
+                  src="/logo.png?v=3" 
                   alt="ADK Software Solutions Logo" 
-                  className="h-7 w-auto object-contain transition-transform group-hover:scale-105" 
+                  className="h-8 w-auto object-contain transition-transform group-hover:scale-105" 
                 />
                 <div className="flex flex-col">
                   <span className="font-bold text-lg text-white leading-none tracking-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>ADK</span>
