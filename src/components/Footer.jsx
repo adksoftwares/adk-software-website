@@ -59,6 +59,11 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link to="/privacy-policy" className="text-neutral-400 hover:text-white transition-colors duration-200">
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -104,9 +109,12 @@ const Footer = () => {
         {/* Bottom Bar with exact requested copyright */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs font-mono text-neutral-500">
           <p>© 2026 ADK Software Solutions. Engineered for reality.</p>
-          <div className="flex gap-6">
-            <span className="hover:text-neutral-300 transition-colors cursor-pointer">Security Audited</span>
-            <span className="hover:text-neutral-300 transition-colors cursor-pointer">Continuous Deployment</span>
+          <div className="flex items-center gap-6">
+            <Link to="/privacy-policy" className="hover:text-[#ccff00] text-neutral-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="hover:text-neutral-300 transition-colors cursor-pointer hidden sm:inline">Security Audited</span>
+            <span className="hover:text-neutral-300 transition-colors cursor-pointer hidden sm:inline">Continuous Deployment</span>
           </div>
         </div>
       </div>

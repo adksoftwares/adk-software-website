@@ -10,6 +10,7 @@ import Technology from './pages/Technology';
 import Process from './pages/Process';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/process" element={<Process />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         </Routes>
       </Layout>
     </Router>
